@@ -7,7 +7,7 @@ import mediapipe as mp
 from function import *
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:3000", "https://flask-ai-model-9f70.onrender.com"])
+CORS(app, resources={r"/predict": {"origins": ["http://localhost:3000", "https://flask-ai-model-9f70.onrender.com"]}})
 try:
     with open("model.json", "r") as json_file:
         model_json = json_file.read()
