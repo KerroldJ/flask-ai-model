@@ -8,10 +8,10 @@ from function import *
 
 app = Flask(__name__)
 try:
-    with open("backend/model.json", "r") as json_file:
+    with open("model.json", "r") as json_file:
         model_json = json_file.read()
     model = model_from_json(model_json)
-    model.load_weights("backend/model.h5")
+    model.load_weights("model.h5")
     print("✅ Model loaded successfully!")
 except Exception as e:
     print(f"❌ Model loading error: {str(e)}")
